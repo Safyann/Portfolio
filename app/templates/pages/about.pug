@@ -1,0 +1,44 @@
+extends ../template
+
+block variables
+    -var title = 'Обо мне'
+    include ../common/variables.pug
+
+block content
+    .wrapper
+        include ../common/header.pug
+        main.main.main--about
+            include ../common/hero.pug
+            section.section.content.content--about
+                .about
+                    .about__content
+                        .title__wrapper
+                            h1.title.title--about Обо мне
+                            svg.title__bg.title__bg--about
+                                use(xlink:href="img/icons/sprite.svg#about_header")
+                        .about__details
+                            .about__photo
+                                img.about__img(src='img/content/avatar.jpg')
+                            h2.subtitle--about.subtitle Кто я
+                            span.about__text.text
+                                p Меня зовут Алена Сафьянникова. 
+                                p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.
+                .skills
+                    .skills__content
+                        h2.subtitle.subtitle--skills Чем я могу быть вам полезна
+                        span.skills__text.text
+                            p Меня очень привлекет Frontend разработка, а также я могу решать некоторые задачи на Backend. Мои знания и навыки лучше всего охарактеризуют небольшие диагаммы ниже.
+                        ul.skills__list
+                            
+            section.section.map
+                .map__img#map
+                .container
+                    .contacts
+                        h2.subtitle.subtitle--contacts Контакты
+                        ul.contacts__list
+                            each item in contactsList
+                                li.contacts__item(class=`contacts__item--${item.type}`) 
+                                    svg.contacts__icon
+                                        use(xlink:href=`img/icons/symbol/sprite.svg#${item.svg}`)
+                                    .contacts__text #{item.contact}
+        include ../common/footer.pug
