@@ -31,27 +31,34 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 
 var path = {
-  dist: { //продакшен
-    html: 'dist',
-    js: 'dist/js',
-    css: 'dist/css',
-    img: 'dist/img',
-    fonts: 'dist/fonts',
-    icons: 'dist/img/icons'
+  dist: {
+    //продакшен
+    html: "dist",
+    js: "dist/js",
+    css: "dist/css",
+    img: "dist/img",
+    fonts: "dist/fonts",
+    icons: "dist/img/icons"
   },
-  app: { //исходники
-    pages: 'app/templates/pages/*.pug',
-    templates: 'app/templates/**/*.pug',
-    js: 'app/js/**/*.js',
-    style: 'app/style/**/*.scss',
-    img: 'app/img/**/*.*',
-    fonts: 'app/fonts/**/*.*',
-    icons: 'app/img/icons/**/*.svg'
+  app: {
+    //исходники
+    pages: "app/templates/pages/*.pug",
+    js: "app/js/**/*.js",
+    style: "app/style/styles.scss",
+    img: "app/img/**/*.*",
+    fonts: "app/fonts/**/*.*",
+    icons: "app/img/icons/**/*.svg"
   },
-  clean: "dist", //удаление
+  watch: {
+    templates: "app/templates/**/*.pug",
+    js: "app/js/**/*.js",
+    style: "app/style/**/*.scss",
+    img: "app/img/**/*.*"
+  },
+  clean: "dist" //удаление
 };
 
-let plugins = [
+var plugins = [
   pxtorem({
     replace: false,
     propList: ['*'],
@@ -60,51 +67,54 @@ let plugins = [
 ]
 //сборка html
 function templates() {
-  return gulp.src(path.app.pages)
+  return gulp
+    .src(path.app.pages)
     .pipe(plumber())
-    .pipe(pug({pretty: true}))
+    .pipe(pug({ pretty: true }))
     .pipe(gulp.dest(path.dist.html))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 }
 //сборка css
 function styles() {
-  return gulp.src(path.app.style)
+  return gulp
+    .src(path.app.style)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
+    .pipe(sass({ outputStyle: "compressed" }))
+    .pipe(autoprefixer({ browsers: ["last 4 versions"], cascade: false }))
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write())
-    .pipe(rename({
-      suffix: ".min"
-    }))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(path.dist.css))
+    .pipe(browserSync.reload({ stream: true }));
 }
 // сборка js
 function scripts() {
-  return gulp.src(path.app.js)
+  return gulp
+    .src(path.app.js)
     .pipe(plumber())
     .pipe(jshint(lintConfig))
-    .pipe(jshint.reporter('default'))
-    .pipe(babel({ presets: ['env'] }))
+    .pipe(jshint.reporter("default"))
+    .pipe(babel({ presets: ["env"] }))
     .pipe(gulpWebpack(webpackConfig, webpack))
     .pipe(gulp.dest(path.dist.js))
+    .pipe(browserSync.reload({ stream: true }));
 }
 //оптимизация картинок
 function images() {
-  return gulp.src(path.app.img)
+  return gulp
+    .src(path.app.img)
     .pipe(imagemin({
-      interlaced: true,
-      progressive: true,
-      svgoPlugins: [{ removeViewBox: false }],
-      use: [pngquant()]
-    }))
+        interlaced: true,
+        progressive: true,
+        svgoPlugins: [{ removeViewBox: false }],
+        use: [pngquant()]
+      }))
     .pipe(gulp.dest(path.dist.img))
+    .pipe(browserSync.reload({ stream: true }));
 }
 //копирование шрифтов
 function fonts() {
@@ -137,25 +147,22 @@ function sprite() {
     }))
     .pipe(gulp.dest(path.dist.icons));
 }
-
 //очистка
 function clean() {
   return del(path.clean)
 }
 //Вотчер
 function watch() {
-  gulp.watch(path.app.templates, templates);
-  gulp.watch(path.app.js, scripts);
-  gulp.watch(path.app.style, styles);
-  gulp.watch(path.app.img, images);
-  gulp.watch(path.app.fonts, fonts);
+  gulp.watch(path.watch.templates, templates);
+  gulp.watch(path.watch.js, scripts);
+  gulp.watch(path.watch.style, styles);
+  gulp.watch(path.watch.img, images);
 }
 //сервер
 function server() {
   browserSync.init({
     server: "dist"
-  });
-  browserSync.watch('dist', browserSync.reload);
+  })
 }
 
 exports.templates = templates;

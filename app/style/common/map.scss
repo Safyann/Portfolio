@@ -1,0 +1,19 @@
+.map {
+    grid-area: map;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.map__img {
+    background: url(../../img/bg/map.png) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}

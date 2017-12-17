@@ -1,0 +1,30 @@
+.articles {
+    grid-area: articles;
+    display: flex;
+    padding-bottom: 150px;
+}
+
+.articles__list {
+    margin-top: 70px;
+    width: 87.5%;
+}
+
+.articles__item {
+    margin-bottom: 67px;
+    border-bottom: 5px solid rgba(55,62,66,0.07);
+
+    &:last-child {
+        margin: 0;
+        border: none;
+    }
+}
+
+.articles__date {
+    margin-bottom: 20px;
+    color: $marine;
+    opacity: 0.7;
+}
+
+.articles__text {
+    margin-bottom: 67px;
+}

@@ -1,11 +1,13 @@
-include ../common/variables.pug
-
 header.header
     .header__container
         .socials.socials--header
-            include ../common/socials.pug
+            include socials.pug
         .hamburger
-            a.hamburger-menu-link(href="#")
-                - for (var i = 0; i < 3; i++)
+            button(type="button").hamburger__btn
+                - for (var i = 0; i < 3; i++) 
                     .hamburger-menu-link__line
-                
+            nav.hamburger__menu
+                ul.hamburger__list
+                    each item in menuItems
+                        li.hamburger__item
+                            a(href=`${item.link}` class=`.hamburger__link--${item.mod}`).hamburger__link.title #{item.title}

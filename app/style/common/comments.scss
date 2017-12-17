@@ -1,0 +1,98 @@
+.comments {
+    grid-area: comments;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('../img/bg/bg_comments.png') 50% 100% no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    padding-bottom: 150px;
+    position: relative;
+}
+
+.comments__list {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+}
+
+.comments__item {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+    grid-template-areas: 
+    "decor decor"
+    "comment comment"
+    "photo person"
+}
+
+.comments__photo {
+    @include circle(80px,$marine);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: photo;
+    align-self: center;
+}
+
+.comments__img {
+    max-width: 100%;
+}
+
+
+.comments__text {
+    grid-area: comment;
+    line-height: 26px;
+    padding-right: 30px;
+    & p:last-child {
+        margin-bottom: 20px;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: 29px;
+        width: 33px;
+        background: url('../img/quote.png') 50% 50% no-repeat;
+        opacity: 0.2;
+        margin-bottom: 25px;
+    }
+}
+
+.comments__person {
+    color: $marine;
+    grid-area: person;
+    align-self: center;
+
+    &--name {
+        @include roboto(600);
+    }
+
+    &--occupation {
+        @include roboto(400);
+    }
+  
+}
+
+.comments__btn-arrow {
+    margin-bottom: 70px;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.comments__arrow-up {
+    fill: $white;
+    opacity: 0.7;
+    width: 26px;
+    height: 17px;
+    transition: opacity 0.5s;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+}

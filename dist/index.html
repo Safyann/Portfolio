@@ -7,63 +7,66 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.min.css">
   </head>
   <body>
     <main class="main main--intro">
       <div class="main__flipper">
         <div class="intro">
-          <div class="intro__group">
-            <div class="intro__owner owner">
-              <div class="owner__photo"><img class="owner__img" src="img/content/avatar.jpg" alt="Веб-разработчик"></div>
-              <h2 class="owner__title owner__title--intro">Алена Сафьянникова</h2><span class="owner__description">Личный сайт веб-разработчика</span>
+          <div class="intro__welcome">
+            <div class="intro__group">
+              <div class="intro__owner owner">
+                <div class="owner__photo"><img class="owner__img" src="img/content/avatar.jpg" alt="Веб-разработчик"></div>
+                <h2 class="owner__title owner__title--intro">Алена Сафьянникова</h2><span class="owner__description">Личный сайт веб-разработчика</span>
+              </div>
+              <div class="socials socials--intro">
+                <ul class="socials__list">
+                  <li class="socials__item"><a class="socials__link--vk socials__link" href="https://vk.com/safyann" target="_blank">
+                      <svg class="socials__icon"> 
+                        <use xlink:href="img/icons/symbol/sprite.svg#vk"></use>
+                      </svg></a></li>
+                  <li class="socials__item"><a class="socials__link--github socials__link" href="https://github.com/Safyann" target="_blank">
+                      <svg class="socials__icon"> 
+                        <use xlink:href="img/icons/symbol/sprite.svg#github"></use>
+                      </svg></a></li>
+                  <li class="socials__item"><a class="socials__link--in socials__link" href="https://www.linkedin.com/in/alena-safiannikova-754a12154/" target="_blank">
+                      <svg class="socials__icon"> 
+                        <use xlink:href="img/icons/symbol/sprite.svg#in"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
             </div>
-            <div class="socials socials--intro">
-              <ul class="socials__list">
-                <li class="socials__item"><a class="socials__link--vk socials__link" href="https://vk.com/safyann">
-                    <svg class="socials__icon"> 
-                      <use xlink:href="img/icons/sprite.svg#vk"></use>
-                    </svg></a></li>
-                <li class="socials__item"><a class="socials__link--github socials__link" href="https://github.com/Safyann">
-                    <svg class="socials__icon"> 
-                      <use xlink:href="img/icons/sprite.svg#github"></use>
-                    </svg></a></li>
-                <li class="socials__item"><a class="socials__link--in socials__link" href="https://www.linkedin.com/in/alena-safiannikova-754a12154/">
-                    <svg class="socials__icon"> 
-                      <use xlink:href="img/icons/sprite.svg#in"></use>
-                    </svg></a></li>
+            <nav class="menu menu--intro">
+              <ul class="menu__list">
+                <li class="menu__item menu__item--works"><a class="menu__link" href="./works.html">Мои работы</a></li>
+                <li class="menu__item menu__item--about"><a class="menu__link" href="./about.html">Обо мне</a></li>
+                <li class="menu__item menu__item--blog"><a class="menu__link" href="./blog.html">Блог</a></li>
               </ul>
-            </div>
+            </nav>
           </div>
-          <nav class="menu menu--intro">
-            <ul class="menu__list">
-              <li class="menu__item menu__item--works"><a class="menu__link" href="./works.html">Мои работы</a></li>
-              <li class="menu__item menu__item--about"><a class="menu__link" href="./about.html">Обо мне</a></li>
-              <li class="menu__item menu__item--blog"><a class="menu__link" href="./blog.html">Блог</a></li>
-            </ul>
-          </nav>
         </div>
         <div class="auth">
           <div class="auth-form">
             <form class="form" action="server.php" method="post" id="form">
               <div class="form__inputs">
-                <div class="form__title">Авторизуйтесь</div>
+                <div class="form__subtitle subtitle">Авторизуйтесь</div>
                 <label class="form__label">
                   <input class="form__input form__input--auth" type="text" placeholder="Логин" name="login" required><span class="form__id">
                     <svg class="form__icon">
-                      <use xlink:href="img/icons/sprite.svg#login"></use>
+                      <use xlink:href="img/icons/symbol/sprite.svg#login"></use>
                     </svg></span>
                 </label>
                 <label class="form__label">
                   <input class="form__input form__input--auth" type="password" placeholder="Пароль" name="password" required><span class="form__id">
                     <svg class="form__icon">
-                      <use xlink:href="img/icons/sprite.svg#password"></use>
+                      <use xlink:href="img/icons/symbol/sprite.svg#password"></use>
                     </svg></span>
                 </label>
                 <label class="form__label form__label--checkbox">
                   <input class="form__checkbox" type="checkbox" name="captcha"><span class="form__checkbox-fake">
                     <svg class="form__checkbox-icon">
-                      <use xlink:href="img/icons/sprite.svg#check"></use>
+                      <use xlink:href="img/icons/symbol/sprite.svg#check"></use>
                     </svg></span><span class="form__caption form__caption--checkbox">Я человек</span>
                 </label>
                 <div class="form__radios">
