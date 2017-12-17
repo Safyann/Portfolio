@@ -1,0 +1,55 @@
+extends ../template
+
+block variables
+    include ../common/variables.pug
+    - var title = 'Обо мне'
+
+block content
+    .wrapper
+        include ../common/header.pug
+        main.main.main--about
+            include ../common/hero.pug
+            svg.triangles.triangles--about(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 108" preserveaspectratio="none")
+                polygon.triangle__left(points="0,0 0,108 601,108 601,105")
+                polygon.triangle__right(points="1200,0 1200,108 599,108 599,105")
+            section.section.content.content--about
+                .about
+                    .about__content
+                        .title__wrapper
+                            h1.title.title--about Обо мне
+                            svg.title__bg.title__bg--about
+                                use(xlink:href="img/icons/symbol/sprite.svg#about_header")
+                        .about__details
+                            .about__photo
+                                img.about__img(src='img/content/avatar.jpg' alt="Веб-разработчик")
+                            h2.subtitle--about.subtitle Кто я
+                            .about__text.text
+                                p Меня зовут Алена Сафьянникова. Мне 23 года. Я занимаюсь веб-разработкой — создаю сайты и приложения.
+                                p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.
+                .skills
+                    .skills__content
+                        h2.subtitle.subtitle--skills Чем я могу быть вам полезна
+                        .skills__text.text
+                            p Меня очень привлекет Frontend разработка, а также я могу решать некоторые задачи на Backend.
+                        ul.skills__list
+                            each item in skillsList
+                                li.skills__group 
+                                    .skills__group-title #{item.skillsGroup}
+                                    ul.skills__details
+                                        each skill in item.skills
+                                            li.skill 
+                                                svg.skill__circle.circle(viewbox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%")
+                                                    circle.circle__second(r="45" cx="50%" cy="50%" class=`circle-${skill[1]}`)
+                                                .skill__title #{skill[0]}
+            section.section.map
+                .map__img#map
+                .contacts
+                    h2.subtitle.subtitle--contacts Контакты
+                    ul.contacts__list
+                        each item in contactsList
+                            li.contacts__item(class=`contacts__item--${item.type}`) 
+                                svg.contacts__icon
+                                    use(xlink:href=`img/icons/symbol/sprite.svg#${item.svg}`)
+                                a.contacts__link(href=`${item.link}`) #{item.contact}
+        include ../common/footer.pug       

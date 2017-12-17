@@ -1,0 +1,38 @@
+.about {
+    grid-area: about;
+    background-color: #efeee9;
+    display: flex;
+    justify-content: center;
+}
+
+.about__content {
+    width: 80%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.about__photo {
+    width: 100%;
+    height: 391px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__img {
+    max-width: 100%;
+}
+
+.about__text {
+    margin-bottom: 20px;
+}
