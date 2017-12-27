@@ -4,5 +4,12 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     grid-template-areas:
-    "about skills"
+    "about skills";
+
+    @include tablets {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "about"
+        "skills";
+    }
 }

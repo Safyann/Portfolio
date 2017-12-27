@@ -24,6 +24,10 @@ body {
     font-size: 16px;
     background-color:#fff;
     position: relative;
+
+    @include phones {
+        font-size: 14px;
+    }
 }
 
 .wrapper {
@@ -37,6 +41,10 @@ body {
     width: 100%;
     padding: 0 30px;
     margin: 0 auto;
+
+    @include tablets {
+        padding: 0 24px;
+    }
 }
 
 ul {

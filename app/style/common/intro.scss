@@ -53,18 +53,38 @@
         background-color: $white;
         color: $marine;
     }
+
+    @include desktop {
+        right: 5.5%;
+    }
+
+    @include phones {
+        right: default;
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 7px 15px;
+    }
 }
 
 .intro__copyright {
     @include roboto(300);
     position: absolute;
-    bottom: 4%;
+    bottom: 3%;
     left: 50%;
     transform: translate(-50%, 0%);
     color: $white;
     opacity: 0.7;
     text-align: center;
     width: 100%;
+
+    @include tablets {
+        font-size: 14px;
+    }
+
+    @include phones {
+        bottom: 2%;
+    }
 }
 
 .active {

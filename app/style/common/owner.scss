@@ -24,13 +24,27 @@
     margin-top: 20px;
     text-align: center;
 
+    @include phones {
+        font-size: 21px;
+    }
+
     &--intro {
         margin-top: 10px;
         font-size: 28px;
+
+        @include phones {
+            margin-top: 18px;
+        }
     }
 }
 
 .owner__description {
     opacity: 0.8;
     @include roboto(400);
+    text-align: center;
+
+    @include phones {
+        margin-top: 3px;
+        font-size: 14px;
+    }
 }

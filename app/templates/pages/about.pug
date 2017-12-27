@@ -52,4 +52,5 @@ block content
                                 svg.contacts__icon
                                     use(xlink:href=`img/icons/symbol/sprite.svg#${item.svg}`)
                                 a.contacts__link(href=`${item.link}`) #{item.contact}
-        include ../common/footer.pug       
+        include ../common/footer.pug 
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuM5NhnV2FTq4CzGiaa8vzy43JoxQdNrI&callback=initMap" async defer)     

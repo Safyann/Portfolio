@@ -8,6 +8,17 @@
     right: 30px;
     z-index: 200;
 
+    @include tablets {
+        top: 27px;
+        right: 24px;
+    }
+
+    @include phones {
+        top: 11px;
+        right: 11px;
+        padding: 0;
+    }
+
     &:hover {
         .hamburger-menu-link__line {
             opacity: 1;
@@ -16,14 +27,19 @@
 }
 
 .hamburger-menu-link__line {
-    width: 26px;
-    height: 4px;
+    width: 40px;
+    height: 8px;
     background: $white;
     border-radius: 5px;
     margin-bottom: 5px;
     transition: all .5s linear;
     opacity: 0.5;
-    transition: opacity 0.5s;
+
+    @include phones {
+        width: 23px;
+        height: 4px;
+        margin-bottom: 4px;
+    }
 }
 
 
@@ -37,11 +53,17 @@
     }
 
     .hamburger-menu-link__line:nth-child(1n+0) {
-        transform: rotate(45deg) translateY(13px);
+        transform: rotate(45deg) translateY(18px);
+        @include phones {
+            transform: rotate(45deg) translateY(12px);
+        }
     }
 
     .hamburger-menu-link__line:nth-child(3n+0) {
-        transform: rotate(-45deg) translateY(-13px);
+        transform: rotate(-45deg) translateY(-18px);
+        @include phones {
+            transform: rotate(-45deg) translateY(-12px);
+        }
     }
 }
 
@@ -79,6 +101,14 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    @include tablets {
+        margin-bottom: 66px;
+    }
+
+    @include phones {
+        margin-bottom: 34px;
+    }
 }
 
 .hamburger__link {
@@ -86,4 +116,21 @@
     text-decoration: none;
     @include title-decor($white,40px);
     transition: all 0.5s;
+
+    @include tablets {
+        @include title-decor($white, 30px);
+    }
+
+    @include phones {
+        @include title-decor($white, 17px);
+    }
+}
+
+.hamburger__item:hover {
+    & .hamburger__link:before {
+        opacity: 1;
+    }
+    & .hamburger__link:after {
+        opacity: 1;
+    }
 }

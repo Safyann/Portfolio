@@ -21,8 +21,34 @@
     margin: 0;
     text-align: center;
 
+    @include tablets {
+        font-size: 49px;
+        line-height: 66px;
+        @include title-decor($black, 30px);
+    }
+
+    @include phones {
+        font-size: 35px;
+        line-height: 42px;
+        @include title-decor($black, 17px);
+    }
+
     &--about {
         margin-bottom: 40px;
+
+         @include desktop {
+             margin-right: 60px;
+         }
+
+         @include tablets {
+             margin-bottom: 30px;
+             margin-top: 30px;
+         }
+
+         @include phones {
+             margin-bottom: 25px;
+             margin-top: 20px;
+         }
     }
 
     &--blog {
@@ -31,12 +57,33 @@
         line-height: 56px;
         margin-top: 20px;
         margin-bottom: 5px;
+
+        @include tablets {
+            @include title-decor($white, 30px);
+        }
+
+        @include phones {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            @include title-decor($white, 25px);
+        }
     }
 
     &--comments {
         width: 380px;
         margin-top: 60px;
         margin-bottom: 60px;
+
+        @include tablets {
+            width: 472px;
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        @include phones {
+            width: 95%;
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -50,8 +97,17 @@
     width: 50%;
     transform: translate(-50%, -15%);
 
+    @include phones {
+        top: 0;
+        width: 70%;
+    }
+
     &--about {
         fill: #6e7171;
+
+        @include tablets {
+            top: 0%;
+        }
     }
 
     &--blog {
@@ -63,11 +119,23 @@
         top: 20%;
         transform: translate(-50%, -20%);
         fill: #6e7171;
+
+        @include tablets {
+            top: 10%;
+        }
+
+        @include phones {
+            top: 0%;
+        }
     }
 
     &--comments {
         top: 20%;
         transform: translate(-50%, -20%);
         fill: #6e7171;
+
+        @include phones {
+            top: 0%;
+        }
     }
 }

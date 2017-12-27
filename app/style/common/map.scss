@@ -1,16 +1,19 @@
 .map {
     grid-area: map;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-}
 
-.map__img {
-    background: url(../../img/bg/map.png) 50% 50% no-repeat;
-    background-size: cover;
+    @include desktop {
+        height: 100%;
+    }
+
+    @include tablets {
+        height: 100%;
+    }
 }
 
 #map {

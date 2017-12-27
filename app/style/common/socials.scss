@@ -37,10 +37,23 @@
         
     .socials__icon {
         fill: $white;
+
+         @include phones {
+             width: 25px;
+             height: 18px;
+         }
     }
 
     .socials__list {
         margin-left: 30px;
+
+        @include tablets {
+            margin: 27px 24px;
+        }
+
+        @include phones {
+            margin: 11px;
+        }
     }
 }
 
@@ -48,6 +61,10 @@
 
     .socials__list {
         margin: 0;
+
+        @include tablets {
+            margin-top: 15px;
+        }
     }
 
     .socials__link {

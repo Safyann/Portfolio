@@ -2,11 +2,19 @@
     grid-area: sidebar;
     display: flex;
     justify-content: flex-end;
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .blog__sidebar.fixed {
     position: fixed;
     width: 34%;
+
+    @include desktop {
+        width: 26.5%;
+    }
 }
 
 .blog__list {

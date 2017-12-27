@@ -9,25 +9,62 @@
     background-size: cover;
     padding-bottom: 150px;
     position: relative;
+
+    @include desktop {
+        background-position-y: 65%;
+    }
+
+    @include tablets {
+        padding-bottom: 234px;
+    }
+
+    @include phones {
+        padding-bottom: 264px;
+    }
+
 }
 
 .comments__list {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: space-between;
     width: 95%;
     margin-bottom: 70px;
     flex-wrap: wrap;
+
+    @include tablets {
+        width: 95%; 
+        //justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+    @include phones {
+        flex-direction: column;
+        margin-bottom: 35px;
+    }
 }
 
 .comments__item {
-    width: 40%;
+    // width: 49%;
     display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 50px 1fr 1fr;
-    grid-template-areas: 
-    "decor decor"
+    grid-template-columns: 100px 280px;
+    // grid-template-rows: 100% 100%;
+    grid-template-areas:
     "comment comment"
-    "photo person"
+    "photo person";
+
+    @include tablets {
+        grid-template-columns: 100px 248px;
+        margin-bottom: 25px;
+    }
+
+    @include phones {
+        width: 100%;
+        grid-template-columns: 80px 1fr;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .comments__photo {
@@ -38,12 +75,15 @@
     align-items: center;
     grid-area: photo;
     align-self: center;
+
+    @include phones {
+        @include circle(55px, $white);
+    }
 }
 
 .comments__img {
     max-width: 100%;
 }
-
 
 .comments__text {
     grid-area: comment;
@@ -51,6 +91,14 @@
     padding-right: 30px;
     & p:last-child {
         margin-bottom: 20px;
+
+        @include tablets {
+            margin-bottom: 10px;
+        }
+
+        @include phones {
+            margin-bottom: 5px;
+        }
     }
 
     &:before {
@@ -58,9 +106,23 @@
         display: block;
         height: 29px;
         width: 33px;
-        background: url('../img/quote.png') 50% 50% no-repeat;
+        background: url('../img/icons/quote.svg') 50% 50% no-repeat;
         opacity: 0.2;
         margin-bottom: 25px;
+
+        @include tablets {
+            margin-bottom: 15px;
+        }
+
+        @include phones {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @include tablets {
+        font-size: 14px;
+        line-height: 24px;
     }
 }
 
@@ -77,12 +139,24 @@
         @include roboto(400);
     }
   
+    @include tablets {
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
 
 .comments__btn-arrow {
     margin-bottom: 70px;
     border: 1px solid transparent;
     background-color: transparent;
+
+    @include tablets {
+        margin-bottom: 50px;
+    }
+
+    @include phones {
+        margin-bottom: 30px;
+    }
 }
 
 .comments__arrow-up {

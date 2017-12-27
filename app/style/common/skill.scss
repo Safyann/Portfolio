@@ -6,8 +6,26 @@
     margin-right: 35px;
     margin-bottom: 15px;
 
+    @include tablets {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    @include phones {
+        margin: 15px;
+    }
+
     &:last-child {
         margin: 0;
+
+        @include tablets {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        @include phones {
+            margin: 15px;
+        }
     }
 }
 

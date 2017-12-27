@@ -7,7 +7,6 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const jshint = require('gulp-jshint');
 const lintConfig = require('./lint.config.js');
-const babel = require('gulp-babel');
 
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
@@ -96,10 +95,11 @@ function scripts() {
   return gulp
     .src(path.app.js)
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(jshint(lintConfig))
     .pipe(jshint.reporter("default"))
-    .pipe(babel({ presets: ["env"] }))
     .pipe(gulpWebpack(webpackConfig, webpack))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.reload({ stream: true }));
 }
