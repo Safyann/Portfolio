@@ -1,16 +1,17 @@
 module.exports = function() {
   var blur = (function() {
-    var wrapper = document.querySelector(".contact-form__wrapper"),
-      form = document.querySelector(".contact-form__blur");
+    const wrapper = document.querySelector(".comments"),
+      blur = document.querySelector(".contact-form__wrapper"),
+      bg = document.querySelector(".contact-form__blur");
 
     return {
       set: function() {
-        var bgWidth = document.querySelector(".comments").offsetWidth,
-          posLeft = -wrapper.offsetLeft,
-          posTop = -wrapper.offsetTop,
-          blurCSS = form.style;
+        var bgWidth = wrapper.offsetWidth,
+          posLeft = -blur.offsetLeft,
+          posTop = -blur.offsetTop,
+          blurCSS = bg.style;
 
-        blurCSS.backgroundSize = bgWidth + "px" + " " + "auto";
+        // blurCSS.backgroundSize = bgWidth + "px" + " " + "auto";
         blurCSS.backgroundPosition = posLeft + "px" + " " + posTop + "px";
       }
     };

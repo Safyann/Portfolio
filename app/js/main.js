@@ -7,6 +7,8 @@ const transition = require('./modules/transition');
 const blurInit = require('./modules/blur');
 const parallax = require('./modules/parallax');
 const parallaxIntro = require('./modules/parallax-intro');
+const skills = require("./modules/skills");
+const articlesAnimate = require("./modules/articles");
 
 
 if (document.getElementsByClassName('works__list').length > 0) {
@@ -31,4 +33,8 @@ if (document.getElementsByClassName('hero__bg').length > 0) {
 
 if (document.getElementsByClassName('parallax').length > 0) {
     parallaxIntro();
+}
+
+if (document.getElementsByClassName("articles__item").length > 0) {
+  articlesAnimate();
 }

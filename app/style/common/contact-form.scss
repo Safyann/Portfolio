@@ -1,5 +1,6 @@
 .contact-form__wrapper {
     width: 380px;
+    height: 450px;
     overflow: hidden;
     border-radius: 5px;
     position: relative;
@@ -22,7 +23,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: url('../img/bg/bg_comments.png') 50% 50% no-repeat;
+    background: url('../img/bg/bg_comments.jpg') no-repeat;
     filter: blur(25px);
 }
 

@@ -35,7 +35,7 @@
 .main--about {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100vh 50% 50%;
+    grid-template-rows: 100vh 1fr 100vh;
     grid-template-areas: 
     "hero"
     "content"

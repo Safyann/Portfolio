@@ -68,7 +68,9 @@ module.exports = function() {
 
   btnNext.addEventListener("click", function(e) {
     currentSlide = slideLimiter(currentSlide + 1);
+    showingSlide.classList.add('animate');
     fillSlider();
+    showingSlide.classList.remove('animate');
   });
 
   btnPrev.addEventListener("click", function(e) {

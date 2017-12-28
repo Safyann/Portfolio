@@ -40,7 +40,7 @@ block content
                                             li.skill 
                                                 svg.skill__circle.circle(viewbox="0 0 110 110")
                                                     circle.circle__first(r="45" cx="50%" cy="50%")
-                                                    circle.circle__second(r="45" cx="50%" cy="50%" class=`circle-${skill[1]}`)
+                                                    circle.circle__second(r="45" cx="50%" cy="50%" data-circle=`${skill[1]}`)
                                                 .skill__title #{skill[0]}
             section.section.map
                 .map__img#map
