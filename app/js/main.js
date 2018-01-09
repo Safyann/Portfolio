@@ -9,6 +9,15 @@ const parallax = require('./modules/parallax');
 const parallaxIntro = require('./modules/parallax-intro');
 const skills = require("./modules/skills");
 const articlesAnimate = require("./modules/articles");
+const preloaderInit = require("./modules/preloader");
+const adminTabs = require("./modules/admin");
+
+if (document.images.length > 0) {
+  preloaderInit();
+} else {
+  document.getElementById("js-preloader").classList.add("done");
+  document.body.style.overflow = "auto";
+}
 
 
 if (document.getElementsByClassName('works__list').length > 0) {
@@ -37,4 +46,8 @@ if (document.getElementsByClassName('parallax').length > 0) {
 
 if (document.getElementsByClassName("articles__item").length > 0) {
   articlesAnimate();
+}
+
+if (document.getElementsByClassName("js-tab").length > 0) {
+  adminTabs();
 }
