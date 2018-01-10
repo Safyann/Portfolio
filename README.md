@@ -1,16 +1,18 @@
-## Проект "Портфолио"
+# portfolio-admin-vue
 
-### 1. Описание проекта
+> A Vue.js project
 
-Этот проект был создан в рамках продвинутого курса по веб-разработке в онлайн школе LoftSchool.
+## Build Setup
 
-* Разработчик: Сафьянниокова Алена
-* Наставник: Илья Швырялкин
+``` bash
+# install dependencies
+npm install
 
-### 2. Технологии используемые в проекте
-* Gulp
-* Sass
-* Pug
-* Webpack
-* ES6
-* Vue.js
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
