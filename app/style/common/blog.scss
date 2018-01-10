@@ -3,8 +3,36 @@
     display: flex;
     justify-content: flex-end;
 
+    &::after {
+        @include tablets {
+            content: "";
+            @include circle (40px, $dark-marine);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateX(40%);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, .2);
+            cursor: pointer;
+        }
+    }
+
     @include tablets {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        width: 50%;
+        height: 100%;
+        margin-right: 0;
+        background: $dark-marine;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, .2);
+    }
+
+    @include phones {
+        width: 70%;
+    }
+    &_opened {
+        transform: translateX(0);
     }
 }
 
@@ -20,7 +48,7 @@
 .blog__list {
     margin-top: 70px;
     margin-right: 100px;
-    width: 75%
+    width: 75%;
 }
 
 .blog__item {

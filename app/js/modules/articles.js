@@ -22,7 +22,7 @@ module.exports = function() {
 
     activeAdd(0);
 
-    var checkDistance = function(scrollTop, elem) {
+    const checkDistance = function(scrollTop, elem) {
       var offset = elem.offset().top;
       var topBorder = offset - scrollTop - windowMargin;
       var midEdge = elem.outerHeight(true) + offset;
@@ -31,7 +31,7 @@ module.exports = function() {
       return topBorder <= 0 && midBorder <= 0;
     };
 
-    var defineArticle = function(articles) {
+    const defineArticle = function(articles) {
       var activeArticle = articles.filter(".active");
       return {
         activeArticle: activeArticle,
@@ -55,7 +55,7 @@ module.exports = function() {
 
           if (article.nextArticle.length) {
             if (checkDistance(scrollTop, article.nextArticle)) {
-              newEq = article.nextArticle.index();
+              var newEq = article.nextArticle.index();
               activeAdd(newEq);
             }
           }
