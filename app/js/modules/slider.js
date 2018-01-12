@@ -1,5 +1,5 @@
 module.exports = function() {
-  var slides = [
+  const slides = [
     {
         subtitle: "Лендинг для магазина бургеров Mr.Burger", 
         techs: "HTML5, CSS3, JavaScript & jQuery, Ajax, Gulp, Git",

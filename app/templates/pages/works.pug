@@ -41,7 +41,7 @@ block content
                         form(action="server.php" method="post").form#form.form--contacts
                             input.form__input(type="text" placeholder="Имя" name="name" required)
                             input.form__input(type="email" placeholder="Email" name="email" required)
-                            textarea.form__input.form__input--textarea(placeholder="Ваше сообщение" name="message")
+                            textarea.form__input.form__input--textarea(placeholder="Ваше сообщение" name="message" required)
                             .form__buttons
                                 button.form__button.form__button--submit(type="submit" name="submit") Отправить
                                 button.form__button.form__button--reset(type="reset" name="reset") Очистить

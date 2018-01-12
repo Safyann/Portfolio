@@ -50,7 +50,8 @@ module.exports = function() {
           if (scrollTop >= fixedPosition) {
             $(".blog__sidebar").addClass("fixed");
           } else {
-            $(".blog__sidebar").removeClass("fixed");
+            $(".blog__sidebar").removeClass("fixed")
+            .removeClass("blog__sidebar_opened");
           }
 
           if (article.nextArticle.length) {
@@ -86,6 +87,10 @@ module.exports = function() {
             },
             1000
           );
+        });
+
+        $(".blog__sidebar").on("click", function() {
+          $(".blog__sidebar").toggleClass("blog__sidebar_opened");
         });
       }
     };
