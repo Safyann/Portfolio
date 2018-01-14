@@ -1,0 +1,21 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "portfolio-project",
+    "user": "",
+    "password": ""
+  },
+  "mail": {
+    "subject": "Сообщение с сайта порфолио",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "alena.safyannikova@yandex.ru",
+        "pass": "314159265"
+      }
+    }
+  }
+}
