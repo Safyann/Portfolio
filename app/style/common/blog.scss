@@ -40,11 +40,14 @@
 
 .blog__sidebar.fixed {
     position: fixed;
-    width: 50%;
+    top: 50px;
+    left: 100px;
     z-index: 100;
 
-    @include desktop {
-        width: 26.5%;
+    @include tablets {
+        top: 0;
+        left: 0;
+        width: 50%;
     }
 }
 
