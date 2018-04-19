@@ -1,34 +1,5 @@
 module.exports = function() {
-  const slides = [
-    {
-        subtitle: "Лендинг для магазина бургеров Mr.Burger", 
-        techs: "HTML5, CSS3, JavaScript & jQuery, Ajax, Gulp, Git",
-        link: "https://safyann.github.io/Burgers/",
-        img: "img/content/works/burgers.png",
-        active: "active",
-        },
-        {
-        subtitle: "Сайт коворкинга Воркадиум", 
-        techs: "HTML5, CSS3, Git",
-        link: "https://safyann.github.io/Coworking/",
-        img: "img/content/works/coworking.png",
-        active: "",
-        },
-        {
-        subtitle: "Сайт для барбершопа Бородинский", 
-        techs: "HTML5, CSS3, Git",
-        link: "https://safyann.github.io/Barbershop/",
-        img: "img/content/works/barbershop.png",
-        active: "",
-        },
-        {
-        subtitle: "Сайт-портфолио веб-разработчика", 
-        techs: "HTML5, CSS3, JavaScript & jQuery, Ajax, Gulp, Git",
-        link: "https://safyann.github.io/Portfolio/",
-        img: "img/content/works/portfolio.png",
-        active: "",
-        }
-    ];
+  const slides = [{ subtitle: "Лендинг для магазина бургеров Mr.Burger", techs: "HTML5, CSS3, JavaScript & jQuery, Ajax, Gulp, Git", link: "https://safyann.github.io/Burgers/", img: "img/content/works/burgers.png", active: "active" }, { subtitle: "Сайт коворкинга Воркадиум", techs: "HTML5, CSS3, Git", link: "https://safyann.github.io/Coworking/", img: "img/content/works/coworking.png", active: "" }, { subtitle: "Сайт для барбершопа Бородинский", techs: "HTML5, CSS3, Git", link: "https://safyann.github.io/Barbershop/", img: "img/content/works/barbershop.png", active: "" }, { subtitle: "Сайт-портфолио веб-разработчика", techs: "HTML5, CSS3, JavaScript & jQuery, Ajax, Gulp, Git", link: "https://safyann.github.io/Portfolio/", img: "img/content/works/portfolio.png", active: "" }, { subtitle: "Сайт-визитка для веб-студии NЁRDS", techs: "PUG, SASS, JavaScript & jQuery, Gulp, Git", link: "https://safyann.github.io/Nerds/", img: "img/content/works/nerds.png", active: "" }];
 
   var slider = document.querySelector(".works__list"),
     showingSlide = document.querySelector(".works__img"),

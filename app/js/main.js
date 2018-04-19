@@ -11,6 +11,8 @@ const skills = require("./modules/skills");
 const articlesAnimate = require("./modules/articles");
 const preloaderInit = require("./modules/preloader");
 const adminTabs = require("./modules/admin");
+const closeMessage = require("./modules/close");
+const formSubmit = require("./modules/form");
 
 if (document.images.length > 0) {
   preloaderInit();
@@ -51,3 +53,11 @@ if (document.getElementsByClassName("articles__item").length > 0) {
 if (document.getElementsByClassName("js-tab").length > 0) {
   adminTabs();
 }
+
+if (document.getElementsByClassName("contact-form__status").length > 0) {
+  closeMessage();
+}
+
+// if (document.getElementsByClassName("form").length > 0) {
+//   formSubmit();
+// }

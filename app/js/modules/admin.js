@@ -1,36 +1,37 @@
-var $ = require('jquery');
+var $ = require("jquery");
 
-module.exports = function () {
-    var linkTabs = (function () {
+module.exports = function() {
+  var linkTabs = (function() {
+    var sections = $(".js-section"),
+      tabs = $(".js-tab");
 
-        var sections = $('.js-section'),
-            tabs = $('.js-tab');
+    var addActive = function(Eq) {
+      sections
+        .eq(Eq)
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
 
-        var addActive = function (Eq) {
-            sections.eq(Eq).addClass('active')
-                .siblings().removeClass('active');
+      tabs
+        .eq(Eq)
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    };
 
-            tabs.eq(Eq).addClass('active')
-                .siblings().removeClass('active');
-        }
+    addActive(0);
 
-        addActive(0);
+    return {
+      init: function() {
+        tabs.on("click", function(e) {
+          var elem = $(e.target),
+            showEq = elem.index();
 
-        return {
-            init: function () {
-                tabs.on('click', function (e) {
-                    var elem = $(e.target),
-                        showEq = elem.index();
+          addActive(showEq);
+        });
+      }
+    };
+  })();
 
-                    addActive(showEq);
-                })
-
-            }
-        }
-
-
-    }());
-
-    linkTabs.init();
-
-}
+  linkTabs.init();
+};
