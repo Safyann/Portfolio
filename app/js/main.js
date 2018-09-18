@@ -1,4 +1,4 @@
-// const $ = require('jquery');
+const $ = require('jquery');
 const hamburgerInit = require('./modules/hamburger');
 const welcome = require('./modules/welcome');
 const googleMap = require('./modules/map');
@@ -58,6 +58,6 @@ if (document.getElementsByClassName("contact-form__status").length > 0) {
   closeMessage();
 }
 
-// if (document.getElementsByClassName("form").length > 0) {
-//   formSubmit();
-// }
+if (document.getElementsByClassName("js-form").length > 0) {
+  formSubmit();
+}

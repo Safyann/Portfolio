@@ -30,17 +30,36 @@
         </div>
         <nav class="admin__header-tabs">
           <ul class="admin__tabs-list">
-            <li class="admin__tabs-item">works</li>
-            <li class="admin__tabs-item">about</li>
-            <li class="admin__tabs-item">blog</li>
+            <li class="admin__tabs-item js-tab">about</li>
+            <li class="admin__tabs-item js-tab">blog</li>
+            <li class="admin__tabs-item js-tab">works</li>
           </ul>
         </nav>
       </header>
-      <section class="admin__content admin__content--about active">
+      <section class="admin__content admin__content--about js-section active">
         <div class="admin__content-container container">
           <div class="admin__content-title">Страница «Обо мне»</div>
           <div class="admin__content-block">
             <ul class="admin__skills-groups">
+              <li class="admin__skills-group">
+                <div class="admin__subtitle admin__subtitle--skills">Design</div>
+                <table class="admin__skills-details">
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Adobe Photoshop</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="90" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Adobe Illustrator</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="50" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                </table>
+              </li>
               <li class="admin__skills-group">
                 <div class="admin__subtitle admin__subtitle--skills">Frontend</div>
                 <table class="admin__skills-details">
@@ -80,7 +99,7 @@
                   <tr class="admin__skill-row">
                     <td class="admin__skill-name">MySQL</td>
                     <td class="admin__skill-value"> 
-                      <input class="admin__skill-input" type="number" placeholder="30" name="login" required>
+                      <input class="admin__skill-input" type="number" placeholder="10" name="login" required>
                     </td>
                     <td class="admin__skill-percent">%</td>
                   </tr>
@@ -138,7 +157,7 @@
           </div>
         </div>
       </section>
-      <section class="admin__content admin__content--blog">
+      <section class="admin__content admin__content--blog js-section">
         <div class="admin__content-container container">
           <div class="admin__content-title">Страница «Блог»</div>
           <div class="admin__content-block">
@@ -152,7 +171,7 @@
           </div>
         </div>
       </section>
-      <section class="admin__content admin__content--works">
+      <section class="admin__content admin__content--works js-section">
         <div class="admin__content-container container">
           <div class="admin__content-title">Страница «Мои работы»</div>
           <div class="admin__content-block">

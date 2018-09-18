@@ -1,7 +1,8 @@
 extends ../template
 
 block variables
-    -var title = 'Панель администрирования'
+    - var title = 'Панель администрирования'
+    - var description = 'Панель администрирования сайта-портфолио'
     include ../common/variables.pug
 
 block content
@@ -13,9 +14,9 @@ block content
                     a.admin__link-back(href="./index.html") Вернуться на сайт
             nav.admin__header-tabs
                 ul.admin__tabs-list
-                    each item in menuItemsIntro
-                        li.admin__tabs-item #{item.mod}
-        section.admin__content.admin__content--about.active
+                    each item in menuItemsAdmin
+                        li.admin__tabs-item.js-tab #{item.mod}
+        section.admin__content.admin__content--about.js-section.active
             .admin__content-container.container
                 .admin__content-title Страница «Обо мне»
                 .admin__content-block
@@ -31,7 +32,7 @@ block content
                                                 input.admin__skill-input(type="number" placeholder=`${skill[1]}` name="login" required)
                                             td.admin__skill-percent %
                     button.admin__button.admin__skills-btn(type="submit" name="save") Сохранить
-        section.admin__content.admin__content--blog
+        section.admin__content.admin__content--blog.js-section
             .admin__content-container.container
                 .admin__content-title Страница «Блог»
                 .admin__content-block
@@ -41,7 +42,7 @@ block content
                             input.form__input.form__input--admin(type="text" placeholder="Дата" name="date")
                             textarea.form__input.form__input--admtextarea(type="text" placeholder="Содержание" name="content")
                             button.admin__button.admin__button--blog(type="submit" name="save") Добавить
-        section.admin__content.admin__content--works
+        section.admin__content.admin__content--works.js-section
             .admin__content-container.container
                 .admin__content-title Страница «Мои работы»
                 .admin__content-block

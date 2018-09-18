@@ -1,7 +1,8 @@
 extends ../template
 
 block variables
-    -var title = 'Мои работы'
+    -var title = 'Проекты по веб-разработке, отзывы о работе'
+    -var description = 'Работы по веб-дизайну, вёрстке, веб-программированию. Адаптивный дизайн и адаптивная вёрстка. Отзывы преподавателей и клиентов'
     include ../common/variables.pug
 
 block content
@@ -32,22 +33,22 @@ block content
                             .comments__photo
                                 img(src=`${item.img}` alt=`${item.person}`).comments__img
                             .comments__person
-                                .comments__person--name #{item.person}
+                                a(href=`${item.link}`).comments__person--name #{item.person}
                                 .comments__person--occupation #{item.occupation}
                 .contact-form__wrapper
                     .contact-form__blur
                     .contact-form
                         .subtitle.subtitle--contactform Связаться со мной
-                        form(action="server.php" method="post").form#form.form--contacts
+                        form(action="mail.php" method="post").form#formContact.form--contacts.js-form
                             input.form__input(type="text" placeholder="Имя" name="name" required)
                             input.form__input(type="email" placeholder="Email" name="email" required)
                             textarea.form__input.form__input--textarea(placeholder="Ваше сообщение" name="message" required)
                             .form__buttons
-                                button.form__button.form__button--submit(type="submit" name="submit") Отправить
-                                button.form__button.form__button--reset(type="reset" name="reset") Очистить
+                                button.form__button.form__button--submit(type="submit") Отправить
+                                button.form__button.form__button--reset(type="reset") Очистить
                     .contact-form__status Сообщение отправлено
                         button.contact-form__status-btn(type="button" name="close") Закрыть
-                button.comments__btn-arrow(type="button")
+                button.comments__btn-arrow.js-comments-btn(type="button")
                     svg.comments__arrow-up
                         use(xlink:href="img/icons/symbol/sprite.svg#portf_arrow_up")
         include ../common/footer.pug

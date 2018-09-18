@@ -35,5 +35,5 @@ module.exports = function() {
     });
   };
 
-  $("#form").on("submit", submitForm);
+  $("#formContact").on("submit", submitForm);
 };

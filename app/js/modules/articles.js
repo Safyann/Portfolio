@@ -92,12 +92,6 @@ module.exports = function() {
         $(".blog__sidebar").on("click", function() {
           $(".blog__sidebar").toggleClass("blog__sidebar_opened");
         });
-
-         var sidebar = document.querySelector("#sidebar")
-
-sidebar.addEventListener("click", function () {
-    sidebar.classList.toggleClass("actiive");
-})
       }
     };
   })();

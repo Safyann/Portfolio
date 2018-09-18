@@ -2,7 +2,7 @@
     grid-area: sidebar;
     display: flex;
     justify-content: flex-end;
-    pointer-events: none;
+    z-index: 100;
 
     &::after {
         @include tablets {
@@ -37,9 +37,7 @@
 
 .blog__sidebar.fixed {
     position: fixed;
-    top: 50px;
-    left: 100px;
-    z-index: 100;
+    width: 34%;
 
     @include tablets {
         top: 0;
@@ -48,13 +46,18 @@
     }
 
     @include phones {
-        width: 70%;
+        width: 80%;
+    }
+
+    @include desktop {
+        width: 25%;
     }
 }
 
 .blog__list {
     margin-top: 70px;
-    margin-right: 100px;
+    margin-bottom: 70px;
+    margin-right: 50px;
     width: 75%;
 }
 

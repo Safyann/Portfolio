@@ -1,11 +1,11 @@
 var $ = require("jquery");
 
-module.exports = function() {
-  var linkTabs = (function() {
+module.exports = function () {
+  var linkTabs = (function () {
     var sections = $(".js-section"),
       tabs = $(".js-tab");
 
-    var addActive = function(Eq) {
+    var addActive = function (Eq) {
       sections
         .eq(Eq)
         .addClass("active")
@@ -22,8 +22,8 @@ module.exports = function() {
     addActive(0);
 
     return {
-      init: function() {
-        tabs.on("click", function(e) {
+      init: function () {
+        tabs.on("click", function (e) {
           var elem = $(e.target),
             showEq = elem.index();
 

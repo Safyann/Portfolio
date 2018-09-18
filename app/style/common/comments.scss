@@ -10,10 +10,6 @@
     padding-bottom: 150px;
     position: relative;
 
-    @include desktop {
-        background-position-y: 65%;
-    }
-
     @include tablets {
         padding-bottom: 234px;
     }
@@ -25,10 +21,13 @@
 }
 
 .comments__bg{ 
- position: absolute;
- top: 0;
- left: 0;
- z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    @include desktop {
+        width: 100%;
+    }
 }
 
 .comments__list {
@@ -140,6 +139,8 @@
 
     &--name {
         @include roboto(600);
+        text-decoration: none;
+        color: $marine;
     }
 
     &--occupation {

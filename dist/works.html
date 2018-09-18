@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Мои работы</title>
+    <title>Проекты по веб-разработке, отзывы о работе</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -129,8 +129,7 @@
                 <p>Прохождение обучения веб-разработке в LoftSchool — это не просто так! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
               </div>
               <div class="comments__photo"><img class="comments__img" src="img/content/dmitry.jpg" alt="Ковальчук Дмитрий"></div>
-              <div class="comments__person">
-                <div class="comments__person--name">Ковальчук Дмитрий</div>
+              <div class="comments__person"><a class="comments__person--name" href="https://vk.com/kovalchukdn">Ковальчук Дмитрий</a>
                 <div class="comments__person--occupation">Основатель школы</div>
               </div>
             </li>
@@ -139,8 +138,7 @@
                 <p>Алена прошла все три курса Профессии, продуктивно поработала и получила отличные знания и навыки. Она маленький гений верстки</p>
               </div>
               <div class="comments__photo"><img class="comments__img" src="img/content/ilya.jpg" alt="Илья Швырялкин"></div>
-              <div class="comments__person">
-                <div class="comments__person--name">Илья Швырялкин</div>
+              <div class="comments__person"><a class="comments__person--name" href="https://vk.com/fanyshu">Илья Швырялкин</a>
                 <div class="comments__person--occupation">Наставник группы</div>
               </div>
             </li>
@@ -149,13 +147,13 @@
             <div class="contact-form__blur"></div>
             <div class="contact-form">
               <div class="subtitle subtitle--contactform">Связаться со мной</div>
-              <form class="form form--contacts" action="server.php" method="post" id="form">
+              <form class="form form--contacts js-form" action="mail.php" method="post" id="formContact">
                 <input class="form__input" type="text" placeholder="Имя" name="name" required>
                 <input class="form__input" type="email" placeholder="Email" name="email" required>
                 <textarea class="form__input form__input--textarea" placeholder="Ваше сообщение" name="message" required></textarea>
                 <div class="form__buttons">
-                  <button class="form__button form__button--submit" type="submit" name="submit">Отправить</button>
-                  <button class="form__button form__button--reset" type="reset" name="reset">Очистить</button>
+                  <button class="form__button form__button--submit" type="submit">Отправить</button>
+                  <button class="form__button form__button--reset" type="reset">Очистить</button>
                 </div>
               </form>
             </div>
@@ -163,7 +161,7 @@
               <button class="contact-form__status-btn" type="button" name="close">Закрыть</button>
             </div>
           </div>
-          <button class="comments__btn-arrow" type="button">
+          <button class="comments__btn-arrow js-comments-btn" type="button">
             <svg class="comments__arrow-up">
               <use xlink:href="img/icons/symbol/sprite.svg#portf_arrow_up"></use>
             </svg>
