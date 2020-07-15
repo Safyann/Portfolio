@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Панель администрирования</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.min.css">
+  </head>
+  <body>
+    <div class="preloader" id="js-preloader">
+      <div class="preloader__img">
+        <svg class="preloader__icon" id="preloader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve">
+          <circle opacity="0.4" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="72" cy="71.999" r="70"></circle>
+          <circle opacity="0.7" fill="none" stroke="#FFFFFF" stroke-width="3.8938" stroke-miterlimit="10" cx="72" cy="72" r="55"></circle>
+          <circle fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="72" cy="72" r="40"></circle>
+        </svg>
+        <div class="preloader__text" id="load-percent">0</div>
+      </div>
+    </div>
+    <div class="wrapper admin">
+      <header class="admin__header">
+        <div class="admin__header-panel">
+          <div class="container">
+            <div class="admin__title">Панель администрирования</div><a class="admin__link-back" href="./index.html">Вернуться на сайт</a>
+          </div>
+        </div>
+        <nav class="admin__header-tabs">
+          <ul class="admin__tabs-list">
+            <li class="admin__tabs-item js-tab">about</li>
+            <li class="admin__tabs-item js-tab">blog</li>
+            <li class="admin__tabs-item js-tab">works</li>
+          </ul>
+        </nav>
+      </header>
+      <section class="admin__content admin__content--about js-section active">
+        <div class="admin__content-container container">
+          <div class="admin__content-title">Страница «Обо мне»</div>
+          <div class="admin__content-block">
+            <ul class="admin__skills-groups">
+              <li class="admin__skills-group">
+                <div class="admin__subtitle admin__subtitle--skills">Design</div>
+                <table class="admin__skills-details">
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Adobe Photoshop</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="90" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Adobe Illustrator</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="50" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                </table>
+              </li>
+              <li class="admin__skills-group">
+                <div class="admin__subtitle admin__subtitle--skills">Frontend</div>
+                <table class="admin__skills-details">
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">HTML5</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="90" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">CSS3</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="75" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">JavaScript &amp; jQuery</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="60" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                </table>
+              </li>
+              <li class="admin__skills-group">
+                <div class="admin__subtitle admin__subtitle--skills">Backend</div>
+                <table class="admin__skills-details">
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">PHP</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="30" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">MySQL</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="10" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Node.js &amp; npm</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="40" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Mongo.db</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="30" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                </table>
+              </li>
+              <li class="admin__skills-group">
+                <div class="admin__subtitle admin__subtitle--skills">WorkFlow</div>
+                <table class="admin__skills-details">
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Git</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="75" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Gulp</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="70" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Bower</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="30" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                  <tr class="admin__skill-row">
+                    <td class="admin__skill-name">Webpack</td>
+                    <td class="admin__skill-value"> 
+                      <input class="admin__skill-input" type="number" placeholder="30" name="login" required>
+                    </td>
+                    <td class="admin__skill-percent">%</td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+            <button class="admin__button admin__skills-btn" type="submit" name="save">Сохранить</button>
+          </div>
+        </div>
+      </section>
+      <section class="admin__content admin__content--blog js-section">
+        <div class="admin__content-container container">
+          <div class="admin__content-title">Страница «Блог»</div>
+          <div class="admin__content-block">
+            <div class="admin__subtitle admin__subtitle--blog">Добавить запись</div>
+            <form class="form form--admin" method="post">
+              <input class="form__input form__input--admin" type="text" placeholder="Название" name="article" required>
+              <input class="form__input form__input--admin" type="text" placeholder="Дата" name="date">
+              <textarea class="form__input form__input--admtextarea" type="text" placeholder="Содержание" name="content"></textarea>
+              <button class="admin__button admin__button--blog" type="submit" name="save">Добавить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="admin__content admin__content--works js-section">
+        <div class="admin__content-container container">
+          <div class="admin__content-title">Страница «Мои работы»</div>
+          <div class="admin__content-block">
+            <div class="admin__subtitle admin__subtitle--blog">Добавить работу</div>
+            <form class="form form--admin" method="post">
+              <input class="form__input form__input--admin" type="text" placeholder="Название проекта" name="project" required>
+              <input class="form__input form__input--admin" type="text" placeholder="Технологии" name="techs">
+              <button class="admin__btn-addwork" type="submit" name="save">
+                <svg class="admin__btn-icon">
+                  <use xlink:href="img/icons/symbol/sprite.svg#admin_img"></use>
+                </svg>
+                <div class="admin__btn-text">Загрузить картинку</div>
+              </button>
+              <button class="admin__button admin__button--works" type="submit" name="save">Добавить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+extends ../template
+
+block variables
+    include ../common/variables.pug
+    - var title = 'Обо мне'
+
+block content
+    .wrapper
+        include ../common/header.pug
+        main.main.main--about
+            include ../common/hero.pug
+            svg.triangles.triangles--about(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 108" preserveaspectratio="none")
+                polygon.triangle__left(points="0,0 0,108 601,108 601,105")
+                polygon.triangle__right(points="1200,0 1200,108 599,108 599,105")
+            section.section.content.content--about
+                .about
+                    .about__content
+                        .title__wrapper
+                            h1.title.title--about Обо мне
+                            svg.title__bg.title__bg--about
+                                use(xlink:href="img/icons/symbol/sprite.svg#about_header")
+                        .about__details
+                            .about__photo
+                                img.about__img(src='img/content/avatar.jpg' alt="Веб-разработчик")
+                            h2.subtitle--about.subtitle Кто я
+                            .about__text.text
+                                p Меня зовут Алена Сафьянникова. Мне 23 года. Я занимаюсь веб-разработкой — создаю сайты и приложения.
+                                p В наше время сайт – это лицо и часть имиджа компании. И я за то, чтобы компании, создающие классные продукты и услуги имели достойный имидж, процветали и развивались. 
+                                p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Я люблю постоянно совершенствовать свои знания и навыки, создавать интересные технологичные современные сайты.
+                            h2.subtitle--about.subtitle Почему Вам выгодно работать со мной
+                            .about__text.text
+                                p Основными своими преимуществами я считаю:
+                                ul
+                                    li Качество, достойное уважения
+                                    li Знание современных тенденций и использование современных решений и технологий
+                                    li Ответственный подход к работе, работа на результат
+                                    li Фокус на потребности клиента и его бизнеса
+                .skills
+                    .skills__content
+                        h2.subtitle.subtitle--skills Чем я могу быть вам полезна
+                        .skills__text.text
+                            p Буду рада помочь Вам в создании, модернизации, редизайне сайта, адаптации его для мобильных устройств. Также я занимаюсь поддержкой и сопровождением сайтов (технической и контентной).
+                            p Для меня очень важно, чтобы Вы получили именно то, что Вам нужно. Будь то эффективный продающий лендинг, привлекательно оформленное портфолио, качественный корпоративный сайт или удобный интернет-магазин. 
+                            p Качество, удобство, понятность и привлекательность – вот то, что я ценю в сайтах, а продуктивное сотрудничество с клиентом всегда даёт превосходный результат.
+                        ul.skills__list
+                            each item in skillsList
+                                li.skills__group 
+                                    .skills__group-title #{item.skillsGroup}
+                                    ul.skills__details
+                                        each skill in item.skills
+                                            li.skill 
+                                                svg.skill__circle.circle(viewbox="0 0 110 110")
+                                                    circle.circle__first(r="45" cx="50%" cy="50%")
+                                                    circle.circle__second(r="45" cx="50%" cy="50%" data-circle=`${skill[1]}`)
+                                                .skill__title #{skill[0]}
+            section.section.map
+                .map__img#map
+                .contacts
+                    h2.subtitle.subtitle--contacts Контакты
+                    ul.contacts__list
+                        each item in contactsList
+                            li.contacts__item(class=`contacts__item--${item.type}`) 
+                                svg.contacts__icon
+                                    use(xlink:href=`img/icons/symbol/sprite.svg#${item.svg}`)
+                                a.contacts__link(href=`${item.link}`) #{item.contact}
+        include ../common/footer.pug 
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuM5NhnV2FTq4CzGiaa8vzy43JoxQdNrI&callback=initMap" async defer)     
